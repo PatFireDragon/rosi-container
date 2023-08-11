@@ -34,7 +34,7 @@ RUN mkdir -p ${ROS_CATKIN_WS}/src
 
 # Repositórios usados para build
 RUN git clone "https://github.com/filRocha/sbai2019-rosiDefy" \
-    ${ROS_CATKIN_WS}/src/rosi-defy
+    ${ROS_CATKIN_WS}/src/rosi_defy
 RUN git clone --recursive "https://github.com/kasperg3/vrep_ros_interface" \
     ${ROS_CATKIN_WS}/src/vrep_ros_interface
 RUN git clone "https://github.com/filRocha/vrep_plugin_velodyne.git" \
@@ -46,7 +46,7 @@ RUN echo "source ${ROS_CATKIN_WS}/devel/setup.bash" >> /root/.bashrc
 RUN echo "alias vrep=$VREP_ROOT/vrep.sh" >> /root/.bashrc
 
 # Alteração de configurações do pacote vrep_ros_interface
-RUN echo -e "rosi_defy/ManipulatorJoints\nrosi_defy/RosiMovement\nrosi_defy/RosiMovementArray\nrosi_defy/HokuyoReading" \
+RUN echo "rosi_defy/ManipulatorJoints\nrosi_defy/RosiMovement\nrosi_defy/RosiMovementArray\nrosi_defy/HokuyoReading" \
     >> ${ROS_CATKIN_WS}/src/vrep_ros_interface/meta/messages.txt
 
 ADD edit/CMakeLists.txt ${ROS_CATKIN_WS}/src/vrep_ros_interface/CMakeLists.txt
