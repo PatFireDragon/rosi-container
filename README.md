@@ -43,11 +43,10 @@ devcontainer.json
     "image": "docker.io/patfiredragon/rosi-container:latest",
 
     "containerEnv": {
-        "DISPLAY": "${localEnv:DISPLAY}",
-        "NVIDIA_DRIVER_CAPABILITIES": "all"
+        "DISPLAY": "${localEnv:DISPLAY}"
     },
 
-    "runArgs": [ "--gpus=all", "--net=host" ]
+    "runArgs": [ "--gpus all", "--runtime=nvidia", "--net=host" ]
 }
 ```
 
