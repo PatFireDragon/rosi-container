@@ -21,7 +21,7 @@ xhost +local:docker
 Abra um terminal no container:
 
 ```bash
-docker run --rm --net=host --gpus=all -e DISPLAY=${DISPLAY} -e NVIDIA_DRIVER_CAPABILITIES="all" -it patfiredragon/rosi-container:latest
+docker run --rm --net=host -e DISPLAY=${DISPLAY} --runtime=nvidia --gpus all -it patfiredragon/rosi-container:latest
 ```
 
 Teste o ambiente gráfico:
